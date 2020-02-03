@@ -1,0 +1,159 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+	margin: 0 0 50px;
+	padding: 0;
+	border: 0;
+}
+div#container {
+ max-width: 1280px;
+ margin: 0 auto;
+ font-size: 18px;
+ text-align: justify; 
+ font-family: Calibri,  Arial, sans-serif; 
+}
+
+header img {
+	width: 100%;
+	margin: 0;
+	border-bottom: 1px solid gray 
+}
+
+section#sidebar {
+	float: left;
+	display: inline-block;
+	width: 250px;
+	/*height: 500px; */
+	margin: 0;
+}
+section#content {
+	float: right;
+	display: inline-block;
+	width: 1009px; 
+	margin: 0;
+	padding: 0 10px 60px;
+	border-left: 1px solid lightgray;
+
+}
+footer {
+	margin: 0 auto;
+	text-align: center;
+	border-top: 1px solid gray;
+	background-color: lightgray;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 23px;
+    width: 100%;
+    padding-top: 3px;
+    text-decoration: underline;
+    color: darkblue;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: Times New Roman, serif;
+    font-size: .7em;
+}
+
+h1 {
+	font-size: 38px;
+	border-bottom: 1px solid gray
+}
+
+.sticky {
+  position: fixed;
+  bottom: 0;
+}
+
+#fig1 {
+	float: left;
+	vertical-align: text-top;
+	width: 480px;
+}
+
+#fig1 img {
+	width: 100%;
+}
+
+#fig1 figcaption {
+	padding-left: 40px;
+}
+
+/* --------------------------------------- TABLE ---------------------------------------*/
+
+table {
+ /* font-family: Times New Roman, serif; */
+  text-align: left;
+  border-collapse: collapse;
+  width: 85%;
+  margin: 0 auto;
+}
+
+th {
+  padding: 18px;
+}
+
+td {
+  padding: 12px;
+}
+
+ .book-title {
+ 	font-style: italic;
+ }
+
+th,
+td {
+  border: solid 1px #e6e6e6;
+}
+
+tr {
+  background-color: #DDD;
+}
+
+tr.even {
+  background-color: #EEE;
+}
+
+#heading {
+  background-color: #666;
+  color: white;
+}
+
+/*  (:  */
+footer { 
+	transition-property: color; 
+	transition-duration: 1s;
+	transition-timing-function: ease-out;
+}
+footer:hover { 
+	color: lightgray;
+}
+
+
+/* NAV */
+
+
+nav ul li {
+    display:inline-block;   
+    margin-right: 20px;
+    line-height: 16px;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    text-align: left;
+    color: darkgray;
+    padding: 10px;
+
+}
+
+nav ul li:hover {
+    background: #EEE;
+}
+
+nav ul li:hover a {
+    color: black;
+}
