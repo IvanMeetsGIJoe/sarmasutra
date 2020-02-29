@@ -22,7 +22,7 @@
             animation: rotating 1s linear infinite;
         }
 
-        #larger-circle {
+        .larger-circle {
             position: absolute;
             top: calc(50% - 150px);
             left: calc(50% - 150px);
@@ -33,13 +33,6 @@
         }
 
         #larger-circle-blur {
-            position: absolute;
-            top: calc(50% - 150px);
-            left: calc(50% - 150px);
-            height: 300px;
-            width: 300px;
-            background-image: linear-gradient(75deg, #FB5DAD 0%, #55FB9F 50%, #8900FF 100%);
-            border-radius: 50%;
             filter: blur(50px);
         }
 
@@ -89,8 +82,8 @@
 
 <body>
     <div id="rotating-container">
-        <div id="larger-circle"></div>
-        <div id="larger-circle-blur"></div>
+        <div class="larger-circle"></div>
+        <div class="larger-circle" id="larger-circle-blur"></div>
         <div id="smaller-circle"></div>
     </div>
 </body>
