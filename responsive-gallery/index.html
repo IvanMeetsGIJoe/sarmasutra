@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Gallery</title>
+    <style>
+        :root { 
+            /* dimenzije definisane konstantama/varijablama, da bi osvjezavanje css-a zbog
+            brzih tehnoloskih promjena bilo brze i jednostavnije */
+            --card-width: 144px; /*    var(--card-width)    */
+            --card-pic-w-h-ratio: 1.5; /*    var(--card-pic-w-h-ratio)    */
+            --min-font: 12px;    /*    var(--min-font)      */
+            --min-font-N: 12;    /*    var(--min-font-N)    */
+            --max-font: 48px;    /*    var(--max-font)      */
+            --max-font-N: 48;    /*    var(--max-font-N)    */
+            --min-vw: 320px;     /*    var(--min-vw)        */
+            --min-vw-N: 320;     /*    var(--min-vw-N)      */
+            --max-vw: 7680px;    /*    var(--max-vw)        */
+            --max-vw-N: 7680;    /*    var(--max-vw-N)      */
+            --grid-gap: 60px;    /*    var(--grid-gap)      */
+        }
+
+        body {
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(azure, lightgray); /* da se bolje vidi caption bg*/
+        }
+
+        .container {
+            margin: 0 auto;
+            display: grid;
+            gap: var(--grid-gap);
+            grid-template-columns: repeat(5, 1fr);
+            width: calc( 5 * var(--card-width) + 4 * var(--grid-gap) );  /* 5 redova + 4 razmaka*/
+        }
+
+        .container header {
+            /* thumbs se i ne moraju dobro vidjeti, ali velicina teksta treba biti prilagodljiva, 
+            jer je danas ogroman raspon izmedju malih i velikih rezolucija ekrana */
+            /* responsive font headera da bude 20% veci od responsive fonta footera */
+            font-size: calc(               
+                1.2 * (
+                  var(--min-font) + 
+                  (var(--max-font-N) - var(--min-font-N)) *
+                    (
+                      (100vw - var(--min-vw)) / 
+                      (var(--max-vw-N) - var(--min-vw-N))
+                    )
+                )    
+            );
+            grid-column: 1 / 6;
+            margin-bottom: calc(-1 * var(--max-font)); /* priblizi header slikama neg. marginom */
+        }
+
+        .container #footer {
+            font-size: calc(
+                var(--min-font) + 
+                (var(--max-font-N) - var(--min-font-N)) *
+                  (
+                    (100vw - var(--min-vw)) / 
+                    (var(--max-vw-N) - var(--min-vw-N))
+                  )
+            );
+            grid-column: 1 / 6;
+            margin-top: -.5em;
+        }
+
+        .box {
+            border-radius: .5em;
+            background-color: #6ba2d9;
+            color: #666;
+            margin: 0;
+            padding: 0;
+            width: var(--card-width);
+        }
+
+        .box img {
+            border-radius: .5em .5em 0 0;
+            display: block;
+            width: 100%;
+            /* da dimenzije slike budu kao u zadatku, nije vazno ako se thumb izoblici */
+            height: calc(var(--card-width) / var(--card-pic-w-h-ratio));
+        }
+
+        .box figcaption {
+            background-color: #faf7ff;
+            border-radius: 0 0 .5em .5em;
+            text-align: center;
+            /* da omjer visina slike i naziva bude kao u zadatku */
+            height: calc(var(--card-width) / 6);
+        }
+
+        /* nek bude malo vise user-friendly */
+        .container figure {            
+            transition: transform .25s;
+        }
+
+        .container figure:hover {            
+            transform: scale(1.1);           
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+                width: calc( 3 * var(--card-width) + 2 * var(--grid-gap) );
+            }
+
+            .container header {
+                grid-column: 1 / 4;
+            }
+
+            .container #footer {
+                grid-column: 1 / 4;
+            }
+
+            .container figure:hover {            
+                transform: scale(1.07);
+            }
+
+        }
+
+        @media screen and (max-width: 640px) {
+            .container {
+                grid-template-columns: repeat(1, 1fr);
+                width: calc( 1 * var(--card-width) + 0 * var(--grid-gap) );
+            }
+            
+            .container header {
+                grid-column: 1 / 2;
+            }
+
+            .container #footer {
+                grid-column: 1 / 2;
+            }
+
+            .container figure:hover {            
+                transform: scale(1.05);
+            }
+        }       
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <header>Gallery Heading</header>
+
+        <figure class="box">
+            <img src="images/placeholder-image.png" />
+            <figcaption>Image Title</figcaption>
+        </figure>
+        <figure class="box">
+            <img src="images/placeholder-image.png" alt="" />
+            <figcaption>Image Title</figcaption>
+        </figure>
+        <figure class="box">
+            <img src="images/placeholder-image.png" alt="" />
+            <figcaption>Image Title</figcaption>
+        </figure>
+        <figure class="box">
+            <img src="images/placeholder-image.png" alt="" />
+            <figcaption>Image Title</figcaption>
+        </figure>
+        <figure class="box">
+            <img src="images/placeholder-image.png" alt="" />
+            <figcaption>Image Title</figcaption>
+        </figure>        
+        <figure class="box">
+            <img src="images/placeholder-image.png" alt="" />
+            <figcaption>Image Title</figcaption>
+        </figure>
+        <figure class="box">
+            <img src="images/placeholder-image.png" alt="" />
+            <figcaption>Image Title</figcaption>
+        </figure>
+        <figure class="box">
+            <img src="images/placeholder-image.png" alt="" />
+            <figcaption>Image Title</figcaption>
+        </figure>
+        <figure class="box">
+            <img src="images/placeholder-image.png" alt="" />
+            <figcaption>Image Title</figcaption>
+        </figure>
+        <figure class="box">
+            <img src="images/placeholder-image.png" alt="" />
+            <figcaption>Image Title</figcaption>
+        </figure>
+
+        <p id="footer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit id iusto
+        eligendi ipsum quasi repellendus veritatis eos tempore numquam nulla alias harum nisi, cum 
+        voluptas voluptatibus? Et veritatis quasi obcaecati. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Distinctio ullam, blanditiis reprehenderit nemo expedita accusamus. Odio 
+        ea harum temporibus autem exercitationem possimus, a deleniti odit, magnam quo delectus asp
+        ernatur eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis laborios
+        am quis laudantium quia esse, earum fugit autem, nulla fugiat aspernatur assumenda eveniet 
+        minus impedit neque quidem exercitationem voluptas, similique ipsa.
+        </p>
+    </div>
+</body>
+</html>

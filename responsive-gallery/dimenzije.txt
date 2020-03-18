@@ -1,0 +1,25 @@
+width card pic: 144px
+height card pic: 96px (height pic calc: 96px)
+height card caption: 24px
+height card: 120px
+card pic w/h ratio: 1 : 0.66666 | 1.5 : 1	
+card w/h ratio: 1.2 : 1
+card h/w ratio: .833333 : 1
+card pic/caption ratio: 144 : 24  | 6 : 1
+
+gutter h: 60px
+gutter v: 60px
+
+p donji odvojen gore od slicica za 36px
+p širi lijevo i desno za 2px
+
+
+font-size header: 24px
+font-size caption: 12px
+
+
+
+
+
+
+( 800 : 560  |  1 : 0.7 )
