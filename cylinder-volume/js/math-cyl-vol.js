@@ -20,7 +20,7 @@ document.getElementById("button").addEventListener("click", function () {
   const POLUPRECNIK = prompt("Unesite brojčanu vrijednost poluprečnika (bez fizičkih jedinica):", 0);
   const VISINA = prompt("Unesite brojčanu vrijednost visine (bez fizičkih jedinica):", 0);
   
-  const ZAPREMINA = POLUPRECNIK * VISINA * PI;
+  const ZAPREMINA = POLUPRECNIK * POLUPRECNIK * PI * VISINA;
 
   alert("Zapremina valjka je: " + ZAPREMINA.toFixed(2));
 });
