@@ -15,7 +15,7 @@
 
 
 document.getElementById("button").addEventListener("click", function () {
-  // ove varijable se pri izvršavanju neće redeklarisati, zato sve const 
+  // ove varijable se pri izvršavanju neće redefinisati, zato sve const 
   const PI = 3.14;  
   const POLUPRECNIK = prompt("Unesite brojčanu vrijednost poluprečnika (bez fizičkih jedinica):", 0);
   const VISINA = prompt("Unesite brojčanu vrijednost visine (bez fizičkih jedinica):", 0);
