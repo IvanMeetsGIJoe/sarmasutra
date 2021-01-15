@@ -1,0 +1,32 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+#main-container {
+    background-color: darkblue;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    height: 100%;
+}
+
+#button {
+    background: transparent;
+    border: 2px solid white;
+    padding: 16px;
+    border-radius: 4px;
+    color: whitesmoke;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#txtboxLCD {
+    width: 500px;
+    height: 40px;
+    font-size: 1.3em;
+    font-weight: bold;
+    background-color: whitesmoke;
+    text-align: center;
+    border: 3px solid darkred;
+}
+
