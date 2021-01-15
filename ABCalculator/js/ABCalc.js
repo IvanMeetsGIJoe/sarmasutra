@@ -18,12 +18,12 @@ document.getElementById("button").addEventListener("click", function () {
 
   (() => {
     
-     if (((num_A = prompt("Enter the first number:").trim()) || parseInt(num_A) === 0) && !(Number.isNaN(num_A))) { // prozorcic nije Cancel-ovan pa nije null && (broj uklj 0)
-      (()=> { document.getElementById("txtboxLCD").value = " " }) (); // clear the HTML input element
+     if (((num_A = prompt("Enter the first number:").trim()) || parseInt(num_A) === 0) && !isNaN(Number(num_A))) { // prozorcic nije Cancel-ovan pa nije null && (broj uklj 0)
+      document.getElementById("txtboxLCD").value = " "; // clear the HTML input element
       showOnLCD(num_A);
       if ( (op = prompt("Enter the operator (+ - * /):").trim()) == "+" || op === "-" || op === "*" || op === "/") {
         showOnLCD(op);
-        if ( ((num_B = prompt("Enter the second number:").trim()) || parseInt(num_B) === 0) && !(Number.isNaN(num_B))) { // user didn't cancel so not null && (number incl 0)
+        if ( ((num_B = prompt("Enter the second number:").trim()) || parseInt(num_B) === 0) && !isNaN(Number(num_B))) { // user didn't cancel so not null && (number incl 0)
           showOnLCD(num_B);
         } else {
           alert("That B no number! All your Base are Belong to us.\nSee you soon, BaBoon!");
